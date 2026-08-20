@@ -1,34 +1,52 @@
-# Cookie Sales — Power BI Report
-
-تقرير Power BI لمبيعات المخبوزات — 700 طلب و6 أصناف.
+# Cookie Sales Report
 
 ![preview](preview.jpg)
 
-**The question:** Which cookie types actually drive the business, and how do
-orders distribute across customers?
+A Power BI report built on three tables — orders, products, customers — for a
+bakery selling wholesale. Small dataset, but it makes a point about who a
+business actually depends on.
 
-**What I did:**
-- Modelled 3 sources in Power BI: `Orders` (700 rows), `Cookie Types` (6
-  products), and `Customers` — related them into a working data model
-- Built the report in Power BI Desktop (`cookie-sales-report.pbix`) with
-  measures, slicers, and visuals
+## What I found
 
-**Tools:** Power BI Desktop (data modelling, DAX measures, report design),
-Excel, CSV
+| | |
+|---|---|
+| Revenue | $4.69M |
+| Profit | $2.72M |
+| Margin | 57.9% |
+| Cookies sold | 1,125,788 |
+| Orders | 700 |
 
-## Open it
+Chocolate Chip alone is 36% of revenue. Add White Chocolate Macadamia and you're
+at 57% from two products out of six. Fortune Cookie is 3% and priced at $1
+against $5 for the others, so it moves volume without moving money.
 
-Download `cookie-sales-report.pbix` and open it in **Power BI Desktop** (free).
-The raw sources are in `data/` if you want to rebuild the model from scratch.
+The customer side is tighter still. ACME Bites is 31% of revenue and Wholesome
+Foods is 24% — 54% of the business sits with two buyers out of five.
+
+High margins on a concentrated base look healthy right up until one buyer
+leaves. That's the finding worth reporting, not the growth between 2019 and 2020.
+
+## The model
+
+Orders is the fact table. It joins to Cookie Types on product name (which
+carries the price and cost per cookie, so revenue and profit are measures, not
+stored columns) and to Customers on customer ID. Dates come in as Excel serial
+numbers and need converting before any time analysis works.
 
 ## Files
 
 ```
 cookie-sales-report.pbix   the Power BI report
-data/Orders.xlsx            700 order rows
-data/Cookie Types.xlsx       6 product types
-data/Customers.csv            customer list
+data/Orders.xlsx           700 orders
+data/Cookie Types.xlsx     price and cost per product
+data/Customers.csv         the five customers
 ```
 
+Open the `.pbix` in Power BI Desktop (free) to see the report and the model.
+
+## Tools
+
+Power BI, DAX, data modelling, Excel
+
 ---
-Rakan Ahmed Al-Nusayri · rakanalnsyry8@gmail.com
+Rakan Ahmed Al-Nusayri — [github.com/RaKaN-DaTa](https://github.com/RaKaN-DaTa)
