@@ -36,7 +36,8 @@ numbers and need converting before any time analysis works.
 ## Files
 
 ```
-cookie-sales-report.pbix   the Power BI report
+cookie-sales-report.pbix      the Power BI report
+cookie-sales-dashboard.xlsx   the same analysis as an Excel dashboard
 data/Orders.xlsx           700 orders
 data/Cookie Types.xlsx     price and cost per product
 data/Customers.csv         the five customers
