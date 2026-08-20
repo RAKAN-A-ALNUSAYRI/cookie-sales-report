@@ -40,9 +40,13 @@ cookie-sales-report.pbix   the Power BI report
 data/Orders.xlsx           700 orders
 data/Cookie Types.xlsx     price and cost per product
 data/Customers.csv         the five customers
+queries.sql                the same numbers in SQL
 ```
 
 Open the `.pbix` in Power BI Desktop (free) to see the report and the model.
+
+`queries.sql` has the same calculations written in SQL, with a note on each
+one — useful for checking the report's numbers against the raw files.
 
 ## Tools
 
